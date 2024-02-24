@@ -1,0 +1,420 @@
+/* Variables */
+:root {
+  --j-primary-clr: #34426f;
+  --j-primary-100-clr: #a9b0c2;
+  --j-primary-200-clr: #a0a8bc;
+  --j-primary-300-clr: #969fb5;
+  --j-primary-400-clr: #2f3c65;
+  --j-primary-500-clr: #181f34;
+  --j-primary-600-clr: #161c2f;
+  --j-secondary-clr: #7d83ff;
+  --j-secondary-100-clr: #bdbfff;
+  --j-secondary-200-clr: #c3c5ff;
+  --j-secondary-300-clr: #c8caff;
+  --j-secondary-400-clr: #414384;
+  --j-secondary-500-clr: #3b3d78;
+  --j-secondary-600-clr: #36376d;
+  --j-warn-clr: #fd8b49;
+  --j-warn-100-clr: #fdc4a1;
+  --j-warn-200-clr: #fdc9aa;
+  --j-warn-300-clr: #fdceb2;
+  --j-warn-400-clr: #fda977;
+  --j-warn-500-clr: #fda069;
+  --j-warn-600-clr: #fd965a;
+  --j-success-clr: #5fab76;
+  --j-success-100-clr: #add4b8;
+  --j-success-200-clr: #b4d8be;
+  --j-success-300-clr: #bbdcc4;
+  --j-success-400-clr: #87c097;
+  --j-success-500-clr: #7bba8d;
+  --j-success-600-clr: #6eb382;
+  --j-info-clr: #4a529d;
+  --j-info-100-clr: #9faac4;
+  --j-info-200-clr: #a8b2c9;
+  --j-info-300-clr: #b0b9ce;
+  --j-info-400-clr: #7184a9;
+  --j-info-500-clr: #6378a0;
+  --j-info-600-clr: #536b97;
+  --j-danger-clr: #c44f4f;
+  --j-danger-100-clr: #c098a2;
+  --j-danger-200-clr: #c6a1aa;
+  --j-danger-300-clr: #cbaab2;
+  --j-danger-400-clr: #a36978;
+  --j-danger-500-clr: #9a5a6a;
+  --j-danger-600-clr: #a85661;
+  --j-gray-clr: #f3f3f9;
+  --j-gray-50-clr: #fefefe;
+  --j-gray-100-clr: #fafafa;
+  --j-gray-200-clr: #f5f5fa;
+  --j-gray-300-clr: #f7f7fa;
+  --j-gray-400-clr: #dddde2;
+  --j-gray-500-clr: #c9c9cd;
+  --j-gray-600-clr: #9191a1;
+  --global-bg-clr: var(--j-gray-clr);
+  --sidebar-bg-clr: var(--j-primary-clr);
+  --sidebar-bg-clr: var(--j-primary-clr);
+  --sidebar-menu-item-clr: var(--e-gray-50-clr);
+  --sidebar-menu-item-hvr-bg-clr: var(--j-primary-400-clr);
+  --sidebar-menu-item-active-brd-clr: var(--j-secondary-clr);
+  --sidebar-menu-title-clr: var(--j-gray-500-clr);
+  --sidebar-empl-of-month-bg-clr: rgba(52, 66, 111, 0.8);
+  --navbar-bg-clr: var(--j-gray-50-clr);
+  --card-bg-clr: var(--j-gray-50-clr);
+  --brdr-clr: var(--j-gray-300-clr);
+  --tbl-header-bg-clr: var(--j-gray-100-clr);
+  --global-text-clr: var(--j-primary-600-clr);
+  --faded-text-clr: var(--j-gray-500-clr);
+  --link-clr: var(--j-secondary-clr);
+  --default-icon-clr: var(--j-primary-600-clr);
+  --default-icon-hvr-bg-clr: var(--j-gray-clr);
+  --bdg-success-bg-clr: var(--j-success-100-clr);
+  --bdg-success-text-clr: var(--j-success-clr);
+  --bdg-secondary-bg-clr: var(--j-secondary-100-clr);
+  --bdg-secondary-text-clr: var(--j-secondary-clr);
+  --bdg-warn-bg-clr: var(--j-warn-100-clr);
+  --bdg-warn-text-clr: var(--j-warn-clr);
+  --bdg-danger-bg-clr: var(--j-danger-100-clr);
+  --bdg-danger-text-clr: var(--j-danger-clr);
+  --input-bg-clr: var(--j-gray-clr);
+  --input-brdr-clr: var(--j-primary-clr);
+  --textarea-bg-clr: transparent;
+  --textarea-brdr-clr: var(--j-gray-clr);
+  --btn-default-bg-clr: var(--j-primary-400-clr);
+  --btn-default-text-clr: var(--j-gray-50-clr);
+  --btn-primary-bg-clr: var(--j-primary-100-clr);
+  --btn-primary-text-clr: var(--j-primary-clr);
+  --btn-secondary-bg-clr: var(--j-secondary-100-clr);
+  --btn-secondary-text-clr: var(--j-secondary-clr);
+  --btn-success-bg-clr: var(--j-success-100-clr);
+  --btn-success-text-clr: var(--j-success-clr);
+  --btn-warn-bg-clr: var(--j-warn-100-clr);
+  --btn-warn-text-clr: var(--j-warn-clr);
+  --btn-danger-bg-clr: var(--j-danger-100-clr);
+  --btn-danger-text-clr: var(--j-danger-clr);
+  --base-font-size: 62.5%;
+  --heading-font-family: "Manrope", sans-serif;
+  --body-font-family: "Poppins", sans-serif;
+  --heading-1: 2.8rem;
+  --heading-2: 2.4rem;
+  --heading-3: 2rem;
+  --heading-4: 1.8rem;
+  --heading-5: 1.6rem;
+  --heading-6: 1.6rem;
+  --paragraph-size: 1.4rem;
+  --card-title: 1.6rem;
+  --small-text: 1.2rem;
+  --menu-item: 1.4rem;
+  --icon-size: 1.4rem;
+  --dropdown-item: 1.3rem;
+  --bdg-size: 1rem;
+  --btn-size: 1.4rem;
+  --heading-line-height: 1.4;
+  --default-line-height: 1.5;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --spacing-0: 0;
+  --spacing-xs: 0.8rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.2rem;
+  --spacing-lg: 1.4rem;
+  --spacing-xl: 1.6rem;
+  --spacing-18: 1.8rem;
+  --spacing-20: 2rem;
+  --container-default: 90%;
+  --container-sm: 87.5rem;
+  --container-md: 121.5rem;
+  --container-lg: 131.5rem;
+  --container-xl: 156rem;
+  --default-brd-rad: 0.4rem;
+  --default-btn-padding: 0.9rem 3rem;
+  --default-btn-sm-padding: 0.6rem 2rem;
+  --default-bdg-padding: 0.4rem 1.2rem;
+  --default-input-padding: 0.9rem 3rem;
+  --default-dropdown-width: 22.5rem;
+  --default-dropdown-mx-height: 35rem;
+}
+
+/*
+=================================================
+                    CSS RESET
+=================================================
+*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+/* Document
+ ========================================================================== */
+html {
+  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+/* Sections
+ ========================================================================== */
+/**
+* Remove the margin in all browsers (opinionated).
+*/
+body {
+  margin: 0;
+}
+
+/**
+* Add the correct display in IE 9-.
+*/
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/* Grouping content
+ ========================================================================== */
+/**
+* Add the correct display in IE 9-.
+* 1. Add the correct display in IE.
+*/
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+* Add the correct margin in IE 8.
+*/
+figure {
+  margin: 1em 40px;
+}
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+* Remove the outline on focused links when they are also active or hovered
+* in all browsers (opinionated).
+*/
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+* Remove the border on images inside links in IE 10-.
+*/
+img {
+  border-style: none;
+}
+
+/* Forms
+ ========================================================================== */
+/**
+* 1. Change the font styles in all browsers (opinionated).
+* 2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+  color: inherit;
+}
+
+/**
+* Show the overflow in IE.
+* 1. Show the overflow in Edge.
+*/
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+* Remove the inheritance of text transform in Edge, Firefox, and IE.
+* 1. Remove the inheritance of text transform in Firefox.
+*/
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+* 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+*    controls in Android 4.
+* 2. Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+* Remove the inner border and padding in Firefox.
+*/
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+* Restore the focus styles unset by the previous rule.
+*/
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+* Remove the default vertical scrollbar in IE.
+*/
+textarea {
+  overflow: auto;
+}
+
+/**
+* 1. Add the correct box sizing in IE 10-.
+* 2. Remove the padding in IE 10-.
+*/
+[type=checkbox],
+[type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+* 1. Correct the odd appearance in Chrome and Safari.
+* 2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+* Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+*/
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  line-height: 1.5;
+}
+
+/* Hidden
+ ========================================================================== */
+/**
+* Add the correct display in IE 10-.
+*/
+[hidden] {
+  display: none;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--body-font-family);
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--global-bg-clr);
+  color: var(--global-text-clr);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--default-line-height);
+  overflow-x: hidden;
+  font-size: var(--paragraph-size);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+a, i, span {
+  display: inline-block;
+}
+
+.h1, .j-h1,
+.h1, .j-h2,
+.h1, .j-h3,
+.h1, .j-h4,
+.h1, .j-h5,
+.h1, .j-h6 {
+  font-family: var(--heading-font-family);
+  color: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+  margin: 0;
+}
+
+h1,
+.j-h1 {
+  font-size: var(--heading-1);
+}
+
+h2,
+.j-h2 {
+  font-size: var(--heading-2);
+}
+
+h3,
+.j-h3 {
+  font-size: var(--heading-3);
+}
+
+h4,
+.j-h4 {
+  font-size: var(--heading-4);
+}
+
+h5,
+.j-h5 {
+  font-size: var(--heading-5);
+}
+
+h6,
+.j-h6 {
+  font-size: var(--heading-6);
+}
+/*# sourceMappingURL=main.css.map */

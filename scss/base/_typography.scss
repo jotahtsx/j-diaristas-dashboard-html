@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+
+.h1, .j-h1,
+.h1, .j-h2,
+.h1, .j-h3,
+.h1, .j-h4,
+.h1, .j-h5,
+.h1, .j-h6 {
+    font-family: var(--heading-font-family);
+    color: inherit;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--heading-line-height);
+    margin: 0;
+}
+
+@for $i from 1 through 6 {
+    h#{$i},
+    .j-h#{$i} {
+        font-size: var(--heading-#{$i});
+    }
+}
