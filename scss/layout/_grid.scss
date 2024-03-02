@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "breakpoints" as *;
+
+.j-container,
+[class*="j-container-"] {
+    width: var(--container-default);
+    margin: 0 auto;
+}
+
+@each $size, $value in $containers {
+    .j-container-#{$size} {
+        @include respond(#{$size}) {
+            max-width: $value;
+        }
+    }
+}
+
+
+.j-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$default-gutter;
+    margin-right: -$default-gutter;
+
+    >[class*=j-flex-] {
+        width: 100%;
+        max-width: 100%;
+        padding-right: $default-gutter;
+        padding-left: $default-gutter;
+    }
+
+    @for $i from 1 through $total-cols {
+        .j-flex-#{$i} {
+            flex: 0 0 calc(100% / (#{$total-cols} / #{$i}));
+            max-width: calc(100% / (#{$total-cols} / #{$i}));
+        }
+    }
+
+    @each $break, $value in $containers {
+        @include respond(#{$break}) {
+            @for $i from 1 through $total-cols {
+                .j-flex-#{$break}-#{$i} {
+                    flex: 0 0 calc(100% / (#{$total-cols} / #{$i}));
+                    max-width: calc(100% / (#{$total-cols} / #{$i}));
+                }
+            }
+        }
+    }
+}
