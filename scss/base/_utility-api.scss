@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+$j-utilities: (
+    "overflow": (
+        class: j-overflow-,
+        property: overflow,
+        responsive: false,
+        suffix: null,
+        values: (
+            auto: auto,
+            visible: visible,
+            hidden: hidden,
+        )
+    ),
+    "margin-top-bottom": (
+        class: j-mg-y-,
+        property: margin-top margin-bottom,
+        values: map.merge($spacings, $spacings),
+    )
+);
+
+.j-mg-x-20 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
