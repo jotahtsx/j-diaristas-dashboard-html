@@ -46,3 +46,6 @@
         }
     }
 }
+
+@include offset-grid($total-cols, false);
+@include offset-grid($total-cols, true);
