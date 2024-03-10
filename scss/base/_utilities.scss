@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "./utility-api" as *;
+
+@each $block, $children in $j-utilities {
+    @each $subblock, $values in $children {
+        $base-class: map.get($children, class);
+        $suffix: map.get($children, suffix);
+        $property: map.get($children, property);
+        $responsive: if(map-has-key($children, responsive), map.get($children, responsive), true);
+        $important: if(map-has-key($children, important), map.get($children, important), true);
+
+        @if type-of($values)==map map and $values !=null and $base-class !=null {
+            
+        }
+    }
+}

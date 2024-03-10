@@ -13,35 +13,36 @@
             @include respond(#{$break}) {
                 @for $i from 1 through $total-cols {
                     .j-offset-#{$break}-#{$i} {
-                        @if $i == $total-cols {
+                        @if $i ==$total-cols {
                             margin-left: 0;
                             flex: 0 0 100%;
                             max-width: 100%;
-                        } @else {
+                        }
+                
+                        @else {
                             margin-left: calc(100% / (#{$total-cols} / #{$i}));
                             flex: 0 0 calc(100% * ((#{$total-cols} - #{$i}) / #{$total-cols}));
-                            max-width: calc(100% *((#{$total-cols} - #{$i}) / #{$total-cols}));
+                            max-width: calc(100% * ((#{$total-cols} - #{$i}) / #{$total-cols}));
                         }
                     }
-                } 
+                }
             }
         }
     } @else {
         @for $i from 1 through $total-cols {
             .j-offset-#{$i} {
-                @if $i == $total-cols {
+                @if $i ==$total-cols {
                     margin-left: 0;
                     flex: 0 0 100%;
                     max-width: 100%;
-                } @else {
+                }
+        
+                @else {
                     margin-left: calc(100% / (#{$total-cols} / #{$i}));
-                    flex: 0 0 calc(100% * ((#{$total-cols} - #{$i})));
+                    flex: 0 0 calc(100% * ((#{$total-cols} - #{$i}) / #{$total-cols}));
                     max-width: calc(100% * ((#{$total-cols} - #{$i}) / #{$total-cols}));
                 }
             }
         }
     }
 }
-
-@include offset-grid($total-cols, false);
-@include offset-grid($total-cols, true);

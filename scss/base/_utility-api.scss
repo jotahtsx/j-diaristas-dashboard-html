@@ -17,6 +17,7 @@ $j-utilities: (
     "margin-top-bottom": (
         class: j-mg-y-,
         property: margin-top margin-bottom,
+        important: false,
         values: map.merge($spacings, $spacings),
     )
 );

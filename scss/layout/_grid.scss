@@ -16,7 +16,6 @@
     }
 }
 
-
 .j-row {
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +36,7 @@
     }
 
     @each $break, $value in $containers {
+
         @include respond(#{$break}) {
             @for $i from 1 through $total-cols {
                 .j-flex-#{$break}-#{$i} {
