@@ -11,8 +11,38 @@
         $responsive: if(map-has-key($children, responsive), map.get($children, responsive), true);
         $important: if(map-has-key($children, important), map.get($children, important), true);
 
-        @if type-of($values)==map map and $values !=null and $base-class !=null {
-            
+        @if type-of($values)==map and $values !=null and $base-class !=null {
+            @each $child, $value in $values {
+                @if $value !=null {
+                    @if $base-class ==null {
+                        #{$child} {
+                            @if type-of($property)==list {
+                                @each $curr-property in $property {
+                                    #{$curr-property}: #{$value} if($important, !important, "");
+                                }
+                            }
+
+                            @else {
+                                #{$property}: #{$value} if($important, !important, "");
+                            }
+                        }
+                    }
+
+                    @else {
+                        .#{$base-class}#{$child}#{$suffix} {
+                            @if type-of($property)==list {
+                                @each $curr-property in $property {
+                                    #{$curr-property}: #{$value} if($important, !important, "");
+                                }
+                            }
+
+                            @else {
+                                #{$property}: #{$value} if($important, !important, "");
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
