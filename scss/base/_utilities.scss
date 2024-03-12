@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../layout/breakpoints" as *;
 @use "./utility-api" as *;
 
 @each $block, $children in $j-utilities {
@@ -18,12 +19,12 @@
                         #{$child} {
                             @if type-of($property)==list {
                                 @each $curr-property in $property {
-                                    #{$curr-property}: #{$value} if($important, !important, "");
+                                    #{$curr-property}: #{$value} if($important, !important, unquote(""));
                                 }
                             }
 
                             @else {
-                                #{$property}: #{$value} if($important, !important, "");
+                                #{$property}: #{$value} if($important, !important, unquote(""));
                             }
                         }
                     }
@@ -32,12 +33,50 @@
                         .#{$base-class}#{$child}#{$suffix} {
                             @if type-of($property)==list {
                                 @each $curr-property in $property {
-                                    #{$curr-property}: #{$value} if($important, !important, "");
+                                    #{$curr-property}: #{$value} if($important, !important, unquote(""));
                                 }
                             }
 
                             @else {
-                                #{$property}: #{$value} if($important, !important, "");
+                                #{$property}: #{$value} if($important, !important, unquote(""));
+                            }
+                        }
+                    }
+                }
+            }
+
+            @if $responsive {
+                @each $break, $value in $breakpoints-up {
+                    @include respond(#{$break}) {
+                        @each $child, $value in $values {
+                            @if $value !=null {
+                                @if $base-class ==null {
+                                    #{$child} {
+                                        @if type-of($property)==list {
+                                            @each $curr-property in $property {
+                                                #{$curr-property}: #{$value} if($important, !important, unquote(""));
+                                            }
+                                        }
+            
+                                        @else {
+                                            #{$property}: #{$value} if($important, !important, unquote(""));
+                                        }
+                                    }
+                                }
+            
+                                @else {
+                                    .#{$base-class}#{$child}#{$suffix}-#{$break} {
+                                        @if type-of($property)==list {
+                                            @each $curr-property in $property {
+                                                #{$curr-property}: #{$value} if($important, !important, unquote(""));
+                                            }
+                                        }
+            
+                                        @else {
+                                            #{$property}: #{$value} if($important, !important, unquote(""));
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

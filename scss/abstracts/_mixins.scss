@@ -18,7 +18,7 @@
                             flex: 0 0 100%;
                             max-width: 100%;
                         }
-                
+
                         @else {
                             margin-left: calc(100% / (#{$total-cols} / #{$i}));
                             flex: 0 0 calc(100% * ((#{$total-cols} - #{$i}) / #{$total-cols}));
@@ -28,7 +28,9 @@
                 }
             }
         }
-    } @else {
+    }
+
+    @else {
         @for $i from 1 through $total-cols {
             .j-offset-#{$i} {
                 @if $i ==$total-cols {
@@ -36,7 +38,7 @@
                     flex: 0 0 100%;
                     max-width: 100%;
                 }
-        
+
                 @else {
                     margin-left: calc(100% / (#{$total-cols} / #{$i}));
                     flex: 0 0 calc(100% * ((#{$total-cols} - #{$i}) / #{$total-cols}));
@@ -46,3 +48,34 @@
         }
     }
 }
+
+@mixin loopt-list-property($property, $value, $important) {
+    @if type-of($property)==list {
+        @each $curr-property in $property {
+            #{$curr-property}: #{$value} if($important, !important, unquote(""));
+        }
+    }
+
+    @else {
+        #{$property}: #{$value} if($important, !important, unquote(""));
+    }
+}
+
+@mixin loop-trough-map($map, $base-class: "j-", $suffix: null, $property: null, $responsive: true, $important: true) {
+    @each $child, $value in $map {
+        @if $value !=null {
+            @if $base-class ==null {
+                #{$child} {
+                    @include loopt-list-property($property, $value, $important);
+                }
+            }
+
+            @else {
+                .#{$base-class}#{$child}#{$suffix} {
+                    @include loopt-list-property($property, $value, $important); 
+                }
+            }
+        }
+    }
+}
+
