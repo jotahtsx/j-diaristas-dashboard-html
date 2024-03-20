@@ -4881,7 +4881,7 @@ h6,
 }
 .j-form__input {
   --default-input-padding: 1rem 2rem 1rem 4rem;
-  background-color: var(--input-bg-color);
+  background-color: var(--input-bg-clr);
   border: 0.1rem solid transparent;
   padding: var(--default-input-padding);
   display: block;
