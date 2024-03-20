@@ -4842,4 +4842,33 @@ h6,
   border: 0.2rem solid var(--global-bg-clr);
   margin-left: -0.8rem;
 }
+
+.j-card {
+  position: relative;
+  background-color: var(--card-bg-clr);
+  border-radius: var(--default-brd-rad);
+  height: 100%;
+  -webkit-box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
+}
+.j-card__header {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.1rem solid var(--brdr-clr);
+}
+.j-card__title {
+  font-size: var(--card-title);
+  font-family: var(--heading-font-family);
+}
+.j-card__body {
+  padding: 2rem;
+}
 /*# sourceMappingURL=main.css.map */
