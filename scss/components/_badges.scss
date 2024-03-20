@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.j-bdg {
+    border: 0;
+    border-radius: var(--default-bdg-rad);
+    padding: var(--default-bdg-padding);
+    font-size: var(--bdg-font-size);
+    text-align: center;
+    display: inline-block;
+
+    @each $current-style in $badges {
+        &.j-bdg-#{$current-style} {
+            background-color: var(--bdg-#{$current-style}-bg-clr);
+            color: var(--bdg-#{$current-style}-text-clr);
+        }
+    }
+}

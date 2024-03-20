@@ -4774,4 +4774,29 @@ h6,
 .j-btn.j-btn-link:hover {
   background-color: transparent;
 }
+
+.j-bdg {
+  border: 0;
+  border-radius: var(--default-bdg-rad);
+  padding: var(--default-bdg-padding);
+  font-size: var(--bdg-font-size);
+  text-align: center;
+  display: inline-block;
+}
+.j-bdg.j-bdg-secondary {
+  background-color: var(--bdg-secondary-bg-clr);
+  color: var(--bdg-secondary-text-clr);
+}
+.j-bdg.j-bdg-success {
+  background-color: var(--bdg-success-bg-clr);
+  color: var(--bdg-success-text-clr);
+}
+.j-bdg.j-bdg-warn {
+  background-color: var(--bdg-warn-bg-clr);
+  color: var(--bdg-warn-text-clr);
+}
+.j-bdg.j-bdg-danger {
+  background-color: var(--bdg-danger-bg-clr);
+  color: var(--bdg-danger-text-clr);
+}
 /*# sourceMappingURL=main.css.map */
