@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.j-avat {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 50%;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    @each $current-size in $avatars {
+        &.j-avat-#{$current-size} {
+            width: calc(($current-size / 10) * 1rem);
+            height: calc(($current-size / 10) * 1rem);
+        }
+    }
+
+    &-group {
+        display: flex;
+        align-items: center;
+        .j-avat:not(:first-of-type) {
+            border: 0.2rem solid var(--global-bg-clr);
+            margin-left: -0.8rem;
+        }
+    }
+}
