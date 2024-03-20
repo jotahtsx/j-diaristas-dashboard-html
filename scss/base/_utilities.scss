@@ -4,84 +4,8 @@
 @use "../layout/breakpoints" as *;
 @use "./utility-api" as *;
 
-@each $block, $children in $j-utilities {
-    @each $subblock, $values in $children {
-        $base-class: map.get($children, class);
-        $suffix: map.get($children, suffix);
-        $property: map.get($children, property);
-        $responsive: if(map-has-key($children, responsive), map.get($children, responsive), true);
-        $important: if(map-has-key($children, important), map.get($children, important), true);
-
-        @if type-of($values)==map and $values !=null and $base-class !=null {
-            @each $child, $value in $values {
-                @if $value !=null {
-                    @if $base-class ==null {
-                        #{$child} {
-                            @if type-of($property)==list {
-                                @each $curr-property in $property {
-                                    #{$curr-property}: #{$value} if($important, !important, unquote(""));
-                                }
-                            }
-
-                            @else {
-                                #{$property}: #{$value} if($important, !important, unquote(""));
-                            }
-                        }
-                    }
-
-                    @else {
-                        .#{$base-class}#{$child}#{$suffix} {
-                            @if type-of($property)==list {
-                                @each $curr-property in $property {
-                                    #{$curr-property}: #{$value} if($important, !important, unquote(""));
-                                }
-                            }
-
-                            @else {
-                                #{$property}: #{$value} if($important, !important, unquote(""));
-                            }
-                        }
-                    }
-                }
-            }
-
-            @if $responsive {
-                @each $break, $value in $breakpoints-up {
-                    @include respond(#{$break}) {
-                        @each $child, $value in $values {
-                            @if $value !=null {
-                                @if $base-class ==null {
-                                    #{$child} {
-                                        @if type-of($property)==list {
-                                            @each $curr-property in $property {
-                                                #{$curr-property}: #{$value} if($important, !important, unquote(""));
-                                            }
-                                        }
-            
-                                        @else {
-                                            #{$property}: #{$value} if($important, !important, unquote(""));
-                                        }
-                                    }
-                                }
-            
-                                @else {
-                                    .#{$base-class}#{$child}#{$suffix}-#{$break} {
-                                        @if type-of($property)==list {
-                                            @each $curr-property in $property {
-                                                #{$curr-property}: #{$value} if($important, !important, unquote(""));
-                                            }
-                                        }
-            
-                                        @else {
-                                            #{$property}: #{$value} if($important, !important, unquote(""));
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+[class*=j-overflow-] {
+    @include customScrollbar;
 }
+
+@include loop-dee-map($j-utilities);
