@@ -4871,4 +4871,33 @@ h6,
 .j-card__body {
   padding: 2rem;
 }
+
+.j-form {
+  width: 100%;
+}
+.j-form__group {
+  position: relative;
+  width: 100%;
+}
+.j-form__input {
+  --default-input-padding: 1rem 2rem 1rem 4rem;
+  background-color: var(--input-bg-color);
+  border: 0.1rem solid transparent;
+  padding: var(--default-input-padding);
+  display: block;
+  width: 100%;
+  border-radius: var(--default-brd-rad);
+  -webkit-transition: all 0.3s 0s ease-out;
+  transition: all 0.3s 0s ease-out;
+}
+.j-form__input:hover, .j-form__input:focus {
+  border-color: var(--input-brd-clr);
+}
+.j-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
 /*# sourceMappingURL=main.css.map */
