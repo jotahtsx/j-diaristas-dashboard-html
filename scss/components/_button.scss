@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.j-btn {
+    border: 0;
+    border-radius: var(--default-brd-red);
+    cursor: pointer;
+    padding: var(--default-btn-padding);
+    font-size: var(--btn-size);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include transition;
+
+    @each $current-style in $buttons {
+        @if $current-style ==default {
+            background-color: var(--btn-#{$current-style}-bg-clr);
+            color: var(--btn-#{$current-style}-text-clr);
+            &:hover {
+                background-color: var(--j-primary-600-clr);
+            }
+        }
+
+        @else {
+            &.j-btn-#{$current-style} {
+                background-color: var(--btn-#{$current-style}-bg-clr);
+                color: var(--btn-#{$current-style}-text-clr);
+
+                &:hover {
+                    background-color: var(--j-#{$current-style}-300-clr);
+                }
+            }
+        }
+    }
+
+    &.j-btn-sm, &.j-btn-sq {
+        padding: var(--default-btn-sm-padding);
+    }
+    &.j-btn-sq {
+        width: calc(2rem + var(--btn-size));
+    }
+    &.j-btn-link {
+        padding: 0;
+        text-decoration: underline;
+        background-color: transparent;
+        text-transform: uppercase;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
