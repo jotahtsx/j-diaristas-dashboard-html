@@ -4900,4 +4900,27 @@ h6,
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
+
+.j-tbl {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: collapse;
+  border: 0.1rem solid var(--brd-clr);
+}
+.j-tbl__header {
+  background-color: var(--tbl-header-bg-clr);
+}
+.j-tbl_head {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--heading-font-family);
+  font-size: 1.4rem;
+}
+.j-tbl__row:not(:last-of-type) {
+  border-bottom: 0.1rem solid var(--brd-clr);
+}
+.j-tbl__head, .j-tbl__data {
+  padding: 1.6rem;
+  text-align: left;
+  white-space: nowrap;
+}
 /*# sourceMappingURL=main.css.map */
