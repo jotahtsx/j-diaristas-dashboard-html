@@ -26,7 +26,7 @@ const dropdown = () => {
             return nonActive;
 
         })
-
+        
         const filterExcepActive = nonTargeted.filter(target =>
             target !== activeMenu)
 
