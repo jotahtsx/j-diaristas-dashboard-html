@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../layout/breakpoints" as *;
 
 .j-dropdown {
     position: relative;
@@ -18,8 +19,52 @@
         position: absolute;
         top: 120%;
         left: 0;
+        opacity: 0;
+        visibility: hidden;
+
         @include transition;
         @include boxShadow;
         @include customScrollbar;
+
+        &.j-active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.j-dropdown-abs-left &__menu {
+        left: 0;
+        right: auto;
+    }
+
+    &.j-dropdown-abs-center &__menu {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.j-dropdown-abs-right &__menu {
+        left: auto;
+        right: 0;
+    }
+
+    @each $break, $value in $containers {
+        @include respond(#{$break}) {
+            &.j-dropdown-abs-left-#{$break} &__menu {
+                left: 0;
+                right: auto;
+                transform: translateX(0);
+            }
+
+            &.j-dropdown-abs-center-#{$break} &__menu {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &.j-dropdown-abs-right-#{$break} &__menu {
+                left: auto;
+                right: 0;
+                transform: translateX(0);
+            }
+        }
     }
 }

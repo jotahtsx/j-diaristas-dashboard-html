@@ -1,11 +1,10 @@
 @use "sass:map";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-@use "../layout/breakpoints" as *;
-@use "./utility-api" as *;
+@use "utility-api" as *;
 
-[class*=j-overflow-] {
-    @include customScrollbar;
+[class*="e-overflow-"] {
+  @include customScrollbar;
 }
 
-@include loop-dee-map($j-utilities);
+@include loop-deep-map($j-utilities);

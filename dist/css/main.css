@@ -135,6 +135,7 @@
   --default-dropdown-mx-height: 35rem;
 }
 
+/* Mixin to loop through a map */
 /*
 =================================================
                     CSS RESET
@@ -418,22 +419,22 @@ h6,
   font-size: var(--heading-6);
 }
 
-[class*=j-overflow-] {
+[class*=e-overflow-] {
   scrollbar-width: thin;
   scrollbar-color: var(--e-gray-600-clr) transparent;
 }
-[class*=j-overflow-]::-webkit-scrollbar-track {
+[class*=e-overflow-]::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 0.2rem transparent;
           box-shadow: inset 0 0 0.2rem transparent;
   background: transparent;
   margin: 1.1rem;
 }
-[class*=j-overflow-]::-webkit-scrollbar {
+[class*=e-overflow-]::-webkit-scrollbar {
   height: 0.5rem;
   width: 0.5rem;
   background: transparent;
 }
-[class*=j-overflow-]::-webkit-scrollbar-thumb {
+[class*=e-overflow-]::-webkit-scrollbar-thumb {
   border-radius: 6rem;
   width: 0.5rem;
   background-color: var(--e-gray-600-clr);
@@ -4848,8 +4849,8 @@ h6,
   background-color: var(--card-bg-clr);
   border-radius: var(--default-brd-rad);
   height: 100%;
-  -webkit-box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.14);
+          box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.14);
 }
 .j-card__header {
   padding: 2rem;
@@ -4940,10 +4941,12 @@ h6,
   position: absolute;
   top: 120%;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
   -webkit-transition: all 0.3s 0s ease-out;
   transition: all 0.3s 0s ease-out;
-  -webkit-box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.14);
+          box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.14);
   scrollbar-width: thin;
   scrollbar-color: var(--e-gray-600-clr) transparent;
 }
@@ -4962,5 +4965,98 @@ h6,
   border-radius: 6rem;
   width: 0.5rem;
   background-color: var(--e-gray-600-clr);
+}
+.j-dropdown__menu.j-active {
+  opacity: 1;
+  visibility: visible;
+}
+.j-dropdown.j-dropdown-abs-left .j-dropdown__menu {
+  left: 0;
+  right: auto;
+}
+.j-dropdown.j-dropdown-abs-center .j-dropdown__menu {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.j-dropdown.j-dropdown-abs-right .j-dropdown__menu {
+  left: auto;
+  right: 0;
+}
+@media screen and (min-width: 553px) {
+  .j-dropdown.j-dropdown-abs-left-sm .j-dropdown__menu {
+    left: 0;
+    right: auto;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .j-dropdown.j-dropdown-abs-center-sm .j-dropdown__menu {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .j-dropdown.j-dropdown-abs-right-sm .j-dropdown__menu {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@media screen and (min-width: 901px) {
+  .j-dropdown.j-dropdown-abs-left-md .j-dropdown__menu {
+    left: 0;
+    right: auto;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .j-dropdown.j-dropdown-abs-center-md .j-dropdown__menu {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .j-dropdown.j-dropdown-abs-right-md .j-dropdown__menu {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@media screen and (min-width: 1281px) {
+  .j-dropdown.j-dropdown-abs-left-lg .j-dropdown__menu {
+    left: 0;
+    right: auto;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .j-dropdown.j-dropdown-abs-center-lg .j-dropdown__menu {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .j-dropdown.j-dropdown-abs-right-lg .j-dropdown__menu {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .j-dropdown.j-dropdown-abs-left-xl .j-dropdown__menu {
+    left: 0;
+    right: auto;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .j-dropdown.j-dropdown-abs-center-xl .j-dropdown__menu {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .j-dropdown.j-dropdown-abs-right-xl .j-dropdown__menu {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 /*# sourceMappingURL=main.css.map */
