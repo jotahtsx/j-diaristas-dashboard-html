@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.j-dropdown {
+    position: relative;
+
+    [data-dropdown-target] {
+        cursor: pointer;
+    }
+
+    &__menu {
+        background-color: var(--card-bg-clr);
+        width: var(--default-dropdown-width);
+        height: auto;
+        max-height: var(--default-dropdown-mx-height);
+        overflow: hidden auto;
+        border-radius: var(--default-brd-rad);
+        position: absolute;
+        top: 120%;
+        left: 0;
+        @include transition;
+        @include boxShadow;
+        @include customScrollbar;
+    }
+}
