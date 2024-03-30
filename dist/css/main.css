@@ -5141,6 +5141,24 @@ h6,
 .j-header .theme-control [data-current-theme=dark] .theme-light {
   display: block;
 }
+.j-header [data-dropdown-target=notifications] {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+.j-header [data-dropdown-target=notifications] .j-bdg {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  border-radius: 50%;
+  padding: 0;
+  top: -0.6rem;
+  right: -0.6rem;
+}
+.j-header [data-dropdown-target=notifications] .j-bdg.j-bdg-danger {
+  color: var(--card-bg-clr);
+}
 
 @-webkit-keyframes pulse {
   0% {

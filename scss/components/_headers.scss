@@ -81,6 +81,27 @@
             }
         }
     }
+
+    [data-dropdown-target="notifications"] {
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+
+        .j-bdg {
+            position: absolute;
+            width: 1.6rem;
+            height: 1.6rem;
+            line-height: 1.6rem;
+            border-radius: 50%;
+            padding: 0;
+            top: -0.6rem;
+            right: -0.6rem;
+
+            &.j-bdg-danger {
+                color: var(--card-bg-clr);
+            }
+        }
+    }
 }
 
 @keyframes pulse {
