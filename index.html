@@ -25,10 +25,9 @@
     <div class="j-container">
       <div class="j-offset-12 j-offset-md-3 j-offset-lg-2">
         <nav class="j-header__nav j-d-flex j-justify-between j-align-center">
-          <div class="j-header__left j-d-flex align-center j-mg-r-10 j-mg-r-0-md">
+          <div class="j-header__left j-d-flex j-align-center j-mg-r-10 j-mg-r-0-md">
             <div class="j-header__mobile j-mg-r-10 j-d-none-md">
-              <button type="button" class="j-icon-btn j-header__mobile--trigger"
-              data-menu-target="main-menu">
+              <button type="button" class="j-icon-btn j-header__mobile--trigger" data-menu-target="main-menu">
                 <i class="ri-menu-2-line j-fs-16"></i>
               </button>
             </div>
@@ -41,6 +40,135 @@
               </form>
             </div>
           </div>
+
+          <ul class="j-header__navitems j-header__sidebar-md-3 j-header__sidebar-lg-2 j-pd-y-20" id="main-menu">
+          </ul>
+
+          <div class="j-header__right j-d-flex j-align-center">
+            <div class="side-alert j-mg-r-10">
+              <button type="button" class="ease-modal-btn j-btn-icon" data-modal-target="subscription-reminder">
+              </button>
+            </div>
+            <div class="theme-control j-mg-r-10">
+              <button type="button" class="theme-switcher j-btn-icon" data-current-theme="light">
+                <i class="ri-moon-line theme-dark"></i>
+                <i class="ri-sun-line theme-light"></i>
+              </button>
+            </div>
+
+            <div class="j-dropdown j-dropdown-abs-right j-d-in-flex j-mg-r-10">
+              <button type="button" class="j-btn j-btn-secondary j-btn-sq" data-dropdown-target="notifications">
+                <i class="ri-notification-line j-fs-16"></i>
+                <span class="j-bdg j-bdg-danger">6</span>
+              </button>
+
+              <div class="j-dropdown__menu" id="notifications">
+                <div class="dropdown-header j-pd-20">
+                  <h6>Notificações</h6>
+                </div>
+
+                <ul class="dropdown-content">
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-in-block j-pd-x-20 j-pd-y-10" href="">
+                      <span class="notice-line j-fs-12">2:47</span>
+                      <span class="j-d-block notice-content j-fs-14 j-fw-bld">Nova candidata cadastrada</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-in-block j-pd-x-20 j-pd-y-10" href="">
+                      <span class="notice-line j-fs-12">2:47</span>
+                      <span class="j-d-block notice-content j-fs-14 j-fw-bld">Nova candidata cadastrada</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-in-block j-pd-x-20 j-pd-y-10" href="">
+                      <span class="notice-line j-fs-12">2:47</span>
+                      <span class="j-d-block notice-content j-fs-14 j-fw-bld">Nova candidata cadastrada</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-in-block j-pd-x-20 j-pd-y-10" href="">
+                      <span class="notice-line j-fs-12">2:47</span>
+                      <span class="j-d-block notice-content j-fs-14 j-fw-bld">Nova candidata cadastrada</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-in-block j-pd-x-20 j-pd-y-10" href="">
+                      <span class="notice-line j-fs-12">2:47</span>
+                      <span class="j-d-block notice-content j-fs-14 j-fw-bld">Nova candidata cadastrada</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-in-block j-pd-x-20 j-pd-y-10" href="">
+                      <span class="notice-line j-fs-12">2:47</span>
+                      <span class="j-d-block notice-content j-fs-14 j-fw-bld">Nova candidata cadastrada</span>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="dropdown-footer j-pd-20">
+                  <button type="button" class="j-btn j-btn-secondary j-btn-link">
+                    Marcar todas como lidas
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="j-dropdown j-dropdown-abs-right j-d-in-flex j-align-center">
+              <button type="button" class="j-avat j-avat-35" data-dropdown-target="profile">
+                <img src="/images/user-f-1.jpg" alt="" class="j-avat__img">
+              </button>
+
+              <div class="j-dropdown__menu" id="profile">
+                <div class="dropdown-header j-pd-20">
+                  <div class="j-d-flex j-align-center">
+                    <div class="user-img j-mg-r-10">
+                      <div class="j-avat j-avat-40">
+                        <img src="/images/user-f-1.jpg" alt="" class="j-avat__img">
+                      </div>
+                    </div>
+                    <div class="user details">
+                      <span class="j-fwd-bld j-fs-14 j-d-block">
+                        João Manoel
+                      </span>
+                      <span class="j-fs-12">
+                        Gerente
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="dropdown-content">
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-flex j-align-center j-pd-x-20 j-pd-y-10" href="">
+                      <i class="ri-user-star-line j-fs-16 j-mg-r-10"></i>
+                      <span class="j-fs-14 j-fw-bld">Perfil</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-flex j-align-center j-pd-x-20 j-pd-y-10" href="">
+                      <i class="ri-equalizer-line j-fs-16 j-mg-r-10"></i>
+                      <span class="j-fs-14 j-fw-bld">Configurações</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-list">
+                    <a class="dropdown-link j-d-flex j-align-center j-pd-x-20 j-pd-y-10" href="">
+                      <i class="ri-task-line j-fs-16 j-mg-r-10"></i>
+                      <span class="j-fs-14 j-fw-bld">Tarefas</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="dropdown-footer">
+                  <a href="#" class="dropdown-link j-d-flex j-align-center j-pd-x-20 j-pd-y-10">
+                    <i class="ri-logout-box-r-line j-fs-18 j-mg-r-10"></i>
+                    <span class="j-fs-16 j-fw-bld">Sair</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </nav>
       </div>
     </div>

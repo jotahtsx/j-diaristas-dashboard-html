@@ -133,6 +133,8 @@
   --default-input-padding: 0.9rem 3rem;
   --default-dropdown-width: 22.5rem;
   --default-dropdown-mx-height: 35rem;
+  --default-navbar-height: 6rem;
+  --default-sidebar-nav-width: 25rem;
 }
 
 /* Mixin to loop through a map */
@@ -4902,29 +4904,6 @@ h6,
           transform: translateY(-50%);
 }
 
-.j-tbl {
-  width: 100%;
-  overflow: hidden;
-  border-collapse: collapse;
-  border: 0.1rem solid var(--brd-clr);
-}
-.j-tbl__header {
-  background-color: var(--tbl-header-bg-clr);
-}
-.j-tbl_head {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--heading-font-family);
-  font-size: 1.4rem;
-}
-.j-tbl__row:not(:last-of-type) {
-  border-bottom: 0.1rem solid var(--brd-clr);
-}
-.j-tbl__head, .j-tbl__data {
-  padding: 1.6rem;
-  text-align: left;
-  white-space: nowrap;
-}
-
 .j-dropdown {
   position: relative;
 }
@@ -5058,5 +5037,46 @@ h6,
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
+}
+
+.j-tbl {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: collapse;
+  border: 0.1rem solid var(--brd-clr);
+}
+.j-tbl__header {
+  background-color: var(--tbl-header-bg-clr);
+}
+.j-tbl_head {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--heading-font-family);
+  font-size: 1.4rem;
+}
+.j-tbl__row:not(:last-of-type) {
+  border-bottom: 0.1rem solid var(--brd-clr);
+}
+.j-tbl__head, .j-tbl__data {
+  padding: 1.6rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.j-header {
+  width: 100%;
+  background-color: var(--card-bg-clr);
+  height: var(--default-navbar-height);
+}
+.j-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+}
+.j-header__mobile--trigger {
+  background-color: var(--global-bg-clr);
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--default-brd-rad);
 }
 /*# sourceMappingURL=main.css.map */
