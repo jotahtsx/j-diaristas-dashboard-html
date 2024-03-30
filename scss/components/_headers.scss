@@ -102,6 +102,23 @@
             }
         }
     }
+    #notifications {
+        --default-dropdown-width: 25rem;
+    }
+    #notifications, #profile {
+        top: calc(var(--default-navbar-height) - 1rem);
+    }
+
+    #profile {
+        .user-details {
+            line-height: 1.2;
+        }
+
+        .dropdown-footer {
+            background-color: transparent;
+            border-top: 0.1rem solid var(--brdr-clr);
+        }
+    }
 }
 
 @keyframes pulse {

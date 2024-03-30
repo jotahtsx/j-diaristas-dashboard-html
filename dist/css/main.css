@@ -375,8 +375,16 @@ img {
      object-fit: cover;
 }
 
-a, i, span {
+a,
+i,
+span {
   display: inline-block;
+}
+
+a {
+  color: var(--global-text-clr);
+  -webkit-transition: all 0.3s 0s ease-out;
+  transition: all 0.3s 0s ease-out;
 }
 
 .h1, .j-h1,
@@ -5055,6 +5063,13 @@ h6,
   }
 }
 
+.dropdown-header, .dropdown-footer {
+  background-color: var(--tbl-header-bg-clr);
+}
+.dropdown-link:hover, .dropdown-link:focus {
+  color: var(--j-secondary-clr);
+}
+
 .j-tbl {
   width: 100%;
   overflow: hidden;
@@ -5158,6 +5173,19 @@ h6,
 }
 .j-header [data-dropdown-target=notifications] .j-bdg.j-bdg-danger {
   color: var(--card-bg-clr);
+}
+.j-header #notifications {
+  --default-dropdown-width: 25rem;
+}
+.j-header #notifications, .j-header #profile {
+  top: calc(var(--default-navbar-height) - 1rem);
+}
+.j-header #profile .user-details {
+  line-height: 1.2;
+}
+.j-header #profile .dropdown-footer {
+  background-color: transparent;
+  border-top: 0.1rem solid var(--brdr-clr);
 }
 
 @-webkit-keyframes pulse {
