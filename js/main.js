@@ -1,7 +1,7 @@
 const dropdown = () => {
     const _variables = {
         main: "j-dropdown",
-        menu: "j-down__menu",
+        menu: "j-dropdown__menu",
         target: "data-dropdown-target",
         active: "j-active",
     }
@@ -34,6 +34,16 @@ const dropdown = () => {
 
         if (activeMenu) activeMenu.classList.toggle(_variables.active)
     })
+
+    document.addEventListener("click", e => {
+        const clickedInsideDropdown = e.target.closest(`.${_variables.main}`)
+
+        if (!clickedInsideDropdown) {
+            dropDown.forEach(dropdown => {
+                dropdown.querySelector(`.${_variables.menu}`).classList.remove(_variables.active)
+            });
+        }
+    });
 }
 
-dropdown()
+dropdown();
